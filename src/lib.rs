@@ -4,16 +4,6 @@ extern crate wasm_bindgen;
 
 use wasm_bindgen::prelude::*;
 
-// Definitions of the functionality available in JS, which wasm-bindgen will
-// generate shims for today (and eventually these should be near-0 cost!)
-//
-// These definitions need to be hand-written today but the current vision is
-// that we'll use WebIDL to generate this `extern` block into a crate which you
-// can link and import. There's a tracking issue for this at
-// https://github.com/alexcrichton/wasm-bindgen/issues/42
-//
-// In the meantime these are written out by hand and correspond to the names and
-// signatures documented on MDN, for example
 #[wasm_bindgen]
 extern {
     type HTMLDocument;
@@ -43,13 +33,12 @@ extern {
     type CSSStyleDeclaration;
     #[wasm_bindgen(method, js_name = getPropertyValue)]
     fn getPropertyValue(this: &CSSStyleDeclaration, prop: &str) -> String;
-
 }
 
 #[wasm_bindgen]
-pub fn run() {
+pub fn run(element_id: &str) {
     
-    let el = document.getElementById("dom");
+    let el = document.getElementById(element_id);
     let text = String::from(el.get_inner_html());
     let el_height = || el.offsetHeight();
     let style = getComputedStyle(&el);
@@ -66,7 +55,8 @@ pub fn run() {
         new_text_len = new_text.len() / 2;
         new_text = new_text[..new_text_len].to_string();
         el.set_inner_html(&new_text);
-        if text_height_int() >= el_height_int() - len_buffer { break };
+        log(new_text.to_string());
+        if text_height_int() >= el_height_int() - len_buffer || new_text_len < 1 { break };
     }
 
     loop {
@@ -74,10 +64,10 @@ pub fn run() {
         new_text = text[..new_text_len].to_string();
         el.set_inner_html(&new_text);
         log(new_text.to_string());
-        if text_height_int() <= el_height_int() - len_buffer { break };
+        if text_height_int() <= el_height_int() - len_buffer || new_text_len > text.len() { break };
     }
 
-    new_text_len -= 1;
+    new_text_len -= 2;
     new_text = text[..new_text_len].to_string();
     el.set_inner_html(&new_text);
 
