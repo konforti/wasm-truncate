@@ -24,7 +24,7 @@
   "author": "Raz Konforti <konforti@gmail.com>",
   "license": "MIT",
   "bugs": {
-      "url": "https://github.com/konforti/wasm-truncate/issues"
+    "url": "https://github.com/konforti/wasm-truncate/issues"
   },
   "homepage": "https://github.com/konforti/wasm-truncate#readme"
 }
