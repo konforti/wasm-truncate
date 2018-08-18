@@ -56,12 +56,6 @@ pub fn run(element_id: &str, lines: u16) {
     let get_el_height = || el_height().parse::<u16>().unwrap();
     let ellipsis = "...";
 
-    // el.set_inner_html(&ellipsis);
-    // if get_text_height() < get_el_height() - len_buffer {
-    //     // el.set_inner_html(&new_text);
-    //     return log("Invalid ellipsis");
-    // };
-
     loop {
         new_text_len = new_text.len() / 2;
         new_text = new_text[..new_text_len].to_string() + ellipsis;
@@ -86,12 +80,4 @@ pub fn run(element_id: &str, lines: u16) {
     new_text = text[..new_text_len].to_string() + ellipsis;
     log(&new_text);
     el.set_inner_html(&new_text);
-
-    // log(line_h   eight);
-    // let j = serde_json::to_string(&elem);
-    // // let e = d.offsetHeight();
-    // log(j);
-    // let val = document.createElement("p");
-    // val.set_inner_html(e);
-    // document.body().append_child(val);
 }

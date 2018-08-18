@@ -8,6 +8,4 @@ Cargo.lock
 /target/
 node_modules/
 
-wasm_truncate.d.ts
-wasm_truncate.js
-wasm_truncate_bg.wasm
+/dist/

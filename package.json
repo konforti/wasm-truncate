@@ -1,13 +1,14 @@
 {
     "name": "@konforti/wasm-truncate",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "description": "truncate texts on the web using wasm-bindgen",
     "main": "dist/index.js",
     "scripts": {
-        "start": "yarn wasm; yarn bindgen; yarn; yarn serve",
+        "start": "yarn build; yarn; yarn serve",
         "serve": "cd examples; webpack-dev-server",
+        "build": "yarn wasm; yarn bindgen;",
         "wasm": "cargo +nightly build --target wasm32-unknown-unknown",
-        "bindgen": "wasm-bindgen target/wasm32-unknown-unknown/debug/wasm_truncate.wasm --out-dir ."
+        "bindgen": "wasm-bindgen target/wasm32-unknown-unknown/debug/wasm_truncate.wasm --out-dir ./dist"
     },
     "devDependencies": {
         "webpack": "^4.11.1",

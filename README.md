@@ -1,6 +1,6 @@
-# wasm-truncate
+# wasm truncate
 
-> truncate texts on the web using wasm-bindgen.
+> truncate texts by number of lines on the web using [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen).
 
 ## Usage
 
