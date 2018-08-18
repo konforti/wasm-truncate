@@ -1,30 +1,30 @@
 {
-  "name": "@konforti/wasm-truncate",
-  "version": "0.1.0",
-  "description": "truncate texts on the web using wasm-bindgen",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "yarn wasm; yarn bindgen; yarn; yarn serve",
-    "serve": "webpack-dev-server",
-    "wasm": "cargo +nightly build --target wasm32-unknown-unknown",
-    "bindgen": "wasm-bindgen target/wasm32-unknown-unknown/debug/wasm_truncate.wasm --out-dir ."
-  },
-  "devDependencies": {
-    "webpack": "^4.11.1",
-    "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^3.1.0"
-  },
-  "keywords": [
-    "truncate",
-    "wasm",
-    "wasm-bindgen",
-    "WebAssembly",
-    "rust"
-  ],
-  "author": "Raz Konforti <konforti@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/konforti/wasm-truncate/issues"
-  },
-  "homepage": "https://github.com/konforti/wasm-truncate#readme"
+    "name": "@konforti/wasm-truncate",
+    "version": "0.1.0",
+    "description": "truncate texts on the web using wasm-bindgen",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "yarn wasm; yarn bindgen; yarn; yarn serve",
+        "serve": "cd examples; webpack-dev-server",
+        "wasm": "cargo +nightly build --target wasm32-unknown-unknown",
+        "bindgen": "wasm-bindgen target/wasm32-unknown-unknown/debug/wasm_truncate.wasm --out-dir ."
+    },
+    "devDependencies": {
+        "webpack": "^4.11.1",
+        "webpack-cli": "^2.0.10",
+        "webpack-dev-server": "^3.1.0"
+    },
+    "keywords": [
+        "truncate",
+        "wasm",
+        "wasm-bindgen",
+        "WebAssembly",
+        "rust"
+    ],
+    "author": "Raz Konforti <konforti@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/konforti/wasm-truncate/issues"
+    },
+    "homepage": "https://github.com/konforti/wasm-truncate#readme"
 }
