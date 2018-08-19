@@ -9,9 +9,9 @@
         "dist/wasm_truncate.d.ts"
     ],
     "scripts": {
-        "start": "yarn build; yarn; yarn serve",
+        "start": "npm run build; npm install; npm run serve",
         "serve": "cd examples; webpack-dev-server",
-        "build": "yarn wasm; yarn bindgen;",
+        "build": "npm run wasm; npm run bindgen;",
         "wasm": "cargo +nightly build --target wasm32-unknown-unknown",
         "bindgen": "wasm-bindgen target/wasm32-unknown-unknown/debug/wasm_truncate.wasm --out-dir ./dist"
     },

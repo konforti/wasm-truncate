@@ -1,21 +1,18 @@
 # wasm truncate
 
 > truncate texts by number of lines using [wasm-bindgen](https://github.com/rustwasm/wasm-bindgen).
+
 ## Installation
+
 ```bash
     npm i -S @konforti/wasm-truncate
 ```
 
-```bash
-    yarn add @konforti/wasm-truncate
-```
-
-
-## Usage 
+## Usage
 
 ```js
 const truncate = async (elementId: string, lines: number) => {
-    const module = await import('wasm-truncate');
+    const module = await import('@konforti/wasm-truncate');
     module.run(elementId, lines);
 };
 
@@ -32,5 +29,5 @@ cargo +nightly install wasm-bindgen-cli
 
 ```bash
 # Run example
-yarn start
+npm start
 ```
