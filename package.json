@@ -1,6 +1,6 @@
 {
     "name": "@konforti/wasm-truncate",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "truncate texts on the web using wasm-bindgen",
     "main": "dist/wasm_truncate.js",
     "types": "dist/wasm_truncate.d.ts",
